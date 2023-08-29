@@ -1,0 +1,15 @@
+.market__table {
+    width: 100%;
+
+    .tag__title {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+    }
+
+    .view__all {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,26 @@
+.history__table {
+    .tag__title {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        margin-bottom: 0;
+    }
+    .arrow {
+        display: flex;
+        width: 23px;
+        height: 23px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 50%;
+
+        &.down {
+            color: #eb5757;
+            background-color: rgba(235, 87, 87, 0.2);
+        }
+
+        &.rise {
+            color: #219653;
+            background-color: rgba(33, 150, 84, 0.2);
+        }
+    }
+}

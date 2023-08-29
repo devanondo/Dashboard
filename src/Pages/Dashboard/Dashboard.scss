@@ -1,0 +1,172 @@
+.dashboard__layout {
+    display: flex;
+    align-items: flex-start;
+
+    .sidebar__container {
+        max-width: 280px;
+        width: 100%;
+        background-color: white;
+        padding: 40px;
+        height: 100vh;
+        // border: 1px solid rgba(192, 197, 203, 0.37);
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        position: sticky;
+        top: 0;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            transition: 0.3s ease;
+            transform: translateX(-100%);
+
+            &.show__sidebar {
+                transform: translateX(0%);
+            }
+        }
+    }
+
+    .content__container {
+        width: calc(100% - 280px);
+        // width: 100%;
+        position: relative;
+
+        @media (max-width: 991px) {
+            width: 100%;
+        }
+
+        .content__wrapper {
+            // background-color: #f0f8ff;
+            min-height: 100vh;
+            // overflow-y: scroll;
+            padding-top: 126px;
+            // padding-top: 28px;
+            padding-left: 33px;
+            padding-right: 33px;
+
+            @media (max-width: 665px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .bar__chart__market__table {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 2fr 1.3fr;
+                gap: 25px;
+                overflow: hidden;
+
+                @media (max-width: 1280px) {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .action {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    .heading__6 {
+                        padding: 2px 12px;
+                        cursor: pointer;
+                        border-radius: 7.398px;
+                        background-color: #f8f8f9;
+
+                        &.active {
+                            background: #f2f8ff;
+                            color: #0060ff;
+                        }
+                    }
+                }
+
+                .candle__chart {
+                    display: flex;
+                    width: 334px;
+                    // width: 100%;
+                    // gap: 20%;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .amount__info {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        cursor: pointer;
+
+                        .am__info {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                        }
+                    }
+                }
+            }
+
+            .assets__footer {
+                margin-top: 30px;
+                padding-bottom: 30px;
+                display: grid;
+                grid-template-columns: 1.1fr 1.1fr 2fr;
+                gap: 25px;
+
+                @media (max-width: 1280px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+
+                    .div1 {
+                        grid-area: 1 / 1 / 2 / 2;
+                    }
+                    .div2 {
+                        grid-area: 1 / 2 / 2 / 3;
+                    }
+                    .div3 {
+                        grid-area: 2 / 1 / 3 / 3;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-column-gap: 20px;
+                    grid-row-gap: 20px;
+
+                    .div1 {
+                        grid-area: 1 / 1 / 2 / 2;
+                    }
+                    .div2 {
+                        grid-area: 2 / 1 / 3 / 2;
+                    }
+                    .div3 {
+                        grid-area: 3 / 1 / 4 / 2;
+                    }
+                }
+            }
+        }
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    @media (max-width: 991px) {
+        .overlay {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+    }
+}
